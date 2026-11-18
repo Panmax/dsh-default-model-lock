@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Default model lock",
+    "description": "Freezes the shared default model at the profile's agent-default-model selection. Chat model switches stay session-local. Configure the pinned provider, model, and effort in Settings → Default model lock; disable the plugin in Plugins to restore the official behavior.",
+    "detail": "docs/DETAIL.md"
+  }
+}

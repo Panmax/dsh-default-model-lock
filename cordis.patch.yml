@@ -1,0 +1,3 @@
+- insert:
+    - id: default-model-lock
+      name: 'dsh-default-model-lock'

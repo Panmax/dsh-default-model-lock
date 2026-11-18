@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "默认模型锁定",
+    "description": "锁定 profile 中 agent-default-model 配置的共享默认模型，聊天里切换模型只影响当前会话。可在 设置 → 默认模型锁定 中配置供应商、模型和推理档位；在插件页关闭该插件即可恢复官方行为。",
+    "detail": "docs/DETAIL.zh.md"
+  }
+}

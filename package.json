@@ -1,0 +1,72 @@
+{
+  "name": "dsh-default-model-lock",
+  "version": "1.1.0",
+  "description": "Pin the shared DeepSeek Harness default model so in-chat model switches stay session-local, with a Settings → Default model lock page.",
+  "author": "Panmax",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Panmax/dsh-default-model-lock.git"
+  },
+  "homepage": "https://github.com/Panmax/dsh-default-model-lock#readme",
+  "bugs": {
+    "url": "https://github.com/Panmax/dsh-default-model-lock/issues"
+  },
+  "type": "module",
+  "icon": "./icon.svg",
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "cordis-plugin",
+    "dsh",
+    "cordis",
+    "plugin",
+    "model",
+    "default-model",
+    "model-lock",
+    "settings"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0",
+    "dsh": ">=0.2.2-rc.1 <0.3.0-0"
+  },
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "src",
+    "cordis.patch.yml",
+    "docs",
+    "locale/*.json",
+    "icon.svg",
+    "LICENSE",
+    "README.md",
+    "README.zh.md"
+  ],
+  "scripts": {
+    "build": "node scripts/build-client.mjs",
+    "test": "node --test tests/*.test.js",
+    "prepack": "npm run build"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-api-session-controller"
+      ]
+    }
+  }
+}
